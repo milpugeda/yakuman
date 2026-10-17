@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- the new address is told only which site sent the player (never this page's path), so it knows the progress came from here -->
+<meta name="referrer" content="origin">
+<title>Yakuman Has Moved</title>
+<meta name="description" content="Yakuman, the mahjong roguelite, now lives at yakuman.pages.dev.">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#0b1210;--felt:#15302a;--fg:#efe6d2;--muted:#9db0a6;--gold:#d9a441;--line:rgba(217,164,65,.45);
+  --display:'Shippori Mincho','Hiragino Mincho ProN','Noto Serif JP',Georgia,serif;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{margin:0;display:flex;align-items:center;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));
+  background:radial-gradient(120% 80% at 50% 0%,#1f3a31,#0b1210 70%) fixed,var(--bg);color:var(--fg);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.card{position:relative;width:100%;max-width:460px;padding:34px 26px 26px;text-align:center;border:1px solid var(--line);border-radius:14px;
+  background:radial-gradient(ellipse at top,rgba(217,164,65,.14),transparent 60%),linear-gradient(180deg,#1b3b33,#122720);box-shadow:0 0 0 1px rgba(217,164,65,.15),0 20px 50px rgba(0,0,0,.55)}
+.card::before,.card::after{content:'';position:absolute;width:18px;height:18px;border:2px solid var(--gold);opacity:.8}
+.card::before{top:8px;left:8px;border-right:0;border-bottom:0;border-radius:4px 0 0 0}
+.card::after{bottom:8px;right:8px;border-left:0;border-top:0;border-radius:0 0 4px 0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,10vw,46px);line-height:1.05;margin:0;letter-spacing:.02em;color:#f6d27a;
+  background:linear-gradient(180deg,#fff4cf 0%,#f6d27a 34%,#dca546 62%,#f8dd96 82%,#e8b95a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 rgba(40,24,4,.85))}
+.seal{display:inline-block;margin:12px 0 18px;padding:4px 6px 4px 12px;letter-spacing:.45em;font:700 17px var(--display);color:#fbe9d0;background:#b8322a;border-radius:4px;
+  box-shadow:inset 0 0 0 2px rgba(251,233,208,.55),0 3px 8px rgba(0,0,0,.4);transform:rotate(-3deg)}
+p{margin:0 0 14px}
+.lead b{color:var(--gold);font-weight:600;white-space:nowrap}
+.muted{color:var(--muted);font-size:13px}
+.btn{display:inline-block;margin:6px 0 12px;padding:13px 22px;border-radius:10px;font:600 16px var(--body);text-decoration:none;cursor:pointer;color:#2a1d0a;
+  background:linear-gradient(180deg,#f3cd72,#d29f3c);border:1px solid #f6d68a;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 3px 0 #8e6420,0 7px 14px rgba(0,0,0,.35)}
+.btn:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 1px 0 #8e6420}
+.btn.plain{color:var(--fg);background:rgba(255,255,255,.06);border-color:rgba(239,230,210,.25);box-shadow:none;font-size:14px;padding:10px 16px}
+.link{background:none;border:0;padding:4px;color:var(--gold);font:13px var(--body);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.note{margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(217,164,65,.22);font-size:13px;color:var(--muted)}
+.code{text-align:left;margin:14px 0 4px}
+.code ol{margin:0 0 12px;padding-left:20px;font-size:14px}
+.code li{margin:0 0 6px}
+textarea{width:100%;height:84px;resize:none;padding:8px;border-radius:8px;border:1px solid rgba(239,230,210,.2);background:#0d1714;color:var(--fg);font:11px/1.35 ui-monospace,Menlo,monospace;word-break:break-all}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.row .btn{margin:0}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .5s cubic-bezier(.2,.8,.2,1) both}@keyframes in{from{opacity:0;transform:translateY(10px) scale(.98)}}}
+</style>
+</head>
+<body>
+<main class="card">
+  <h1>Yakuman</h1>
+  <div class="seal" aria-hidden="true">役満</div>
+  <p class="lead">The game has moved to <b>yakuman.pages.dev</b>.</p>
+  <p id="status" class="muted" hidden></p>
+  <section id="code" class="code" hidden>
+    <ol>
+      <li>Tap <b>Copy Transfer Code</b>.</li>
+      <li>Open <b>yakuman.pages.dev</b> where you want to play. For the Home Screen on an iPhone or iPad: open it in Safari, add it to your Home Screen, then open the new icon.</li>
+      <li>In the game, go to Settings, Import, paste the code and tap Load Save.</li>
+    </ol>
+    <textarea id="codeText" readonly aria-label="Transfer code"></textarea>
+    <div class="row"><button id="copy" class="btn" type="button">Copy Transfer Code</button></div>
+  </section>
+  <a id="go" class="btn" href="https://yakuman.pages.dev/">Go to the New Address</a>
+  <div><button id="showCode" class="link" type="button" hidden>Moving to another browser? Copy a transfer code</button></div>
+  <p class="note">Added Yakuman to your Home Screen? Add the new address to your Home Screen too, then remove the old icon: it opens this page.</p>
+</main>
+<script>
+// The hand-off page at Yakuman's old address. The game moved to TARGET; its progress (runs, unlocks, settings and saved runs,
+// all kept in this browser's storage for this address) can't follow on its own, as storage belongs to one address. So this page
+// reads the game's keys here and opens TARGET with them after #import=, the part of an address that is never sent to any
+// server; the game there takes them in and removes them from the address. The data goes nowhere else.
+// The same storage is shared by every site at milpugeda.github.io, so only the game's own keys are read, and none is changed:
+// the progress stays here too, so nothing is lost if anything goes wrong.
+const TARGET = 'https://yakuman.pages.dev/';
+// Tests only: window.__HANDOFF_TEST = { target, delay, maxFragment } (set before this script runs) sends the player to a local copy of
+// the game instead. Anything that isn't a localhost address is ignored, so a link can't send the progress elsewhere.
+const TEST = window.__HANDOFF_TEST && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//.test(window.__HANDOFF_TEST.target || '') ? window.__HANDOFF_TEST : null;
+const DEST = TEST ? TEST.target : TARGET, DELAY = TEST && TEST.delay != null ? +TEST.delay : 1200;
+// Chrome refuses addresses over 2 MB; well under that, a heavy device (three full profiles, each with a saved run) makes
+// about 30 KB. Past this the progress goes by transfer code instead.
+const MAX_FRAGMENT = TEST && TEST.maxFragment ? +TEST.maxFragment : 400000;
+// the game's keys that move (the game's own list, in MOVED PROGRESS in game.js, must match): each profile's lifetime progress,
+// saved run and last New Run choice (profiles 2 and 3 end in .s2 and .s3), the profile in use, the settings, the feedback email
+const SETTING_KEYS = ['yakuman.lastplay', 'yakuman.debug', 'yakuman.lang', 'yakuman.speed', 'yakuman.dots', 'yakuman.hints', 'yakuman.tilenums', 'yakuman.unlockall', 'yakuman.sound', 'yakuman.music', 'yakuman.hc', 'yakuman.shake', 'yakuman.gfx', 'yakuman.motion', 'yakuman.instantscore'];
+const FIXED = ['yakuman.slot', 'yakuman.fbemail'].concat(SETTING_KEYS);
+const moveKey = k => /^yakuman\.(profile\.v1|save\.v1|lastsetup)(\.s[23])?$/.test(k) || FIXED.indexOf(k) >= 0;
+const $ = id => document.getElementById(id);
+
+function readKeys() {
+  const keys = {};
+  try { const all = []; for (let i = 0; i < localStorage.length; i++) all.push(localStorage.key(i)); all.sort(); for (const k of all) { if (!moveKey(k)) continue; const v = localStorage.getItem(k); if (typeof v === 'string' && v.length <= 2000000) keys[k] = v; } } catch (e) { }
+  return keys;
+}
+function b64url(bytes) { let bin = ''; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
+// "z." and the deflated JSON, or "j." and the plain JSON where the browser can't compress. The same keys always give the same
+// code (keys sorted, no time in it), so the game can tell when it has seen this progress before.
+async function encode(keys) {
+  const bytes = new TextEncoder().encode(JSON.stringify({ app: 'yakuman', v: 1, keys }));
+  if (window.CompressionStream) { try { const cs = new CompressionStream('deflate-raw'), w = cs.writable.getWriter(); w.write(bytes).catch(() => { }); w.close().catch(() => { }); return 'z.' + b64url(new Uint8Array(await new Response(cs.readable).arrayBuffer())); } catch (e) { } }
+  return 'j.' + b64url(bytes);
+}
+function go(code) { try { location.replace(code ? DEST + '#import=' + code : DEST); } catch (e) { location.href = DEST; } }
+function say(text) { const s = $('status'); s.textContent = text; s.hidden = false; }
+function showCode(code) {
+  $('codeText').value = 'YKMT:' + code; $('code').hidden = false; $('showCode').hidden = true;
+  $('copy').onclick = () => { const done = () => { $('copy').textContent = 'Copied'; setTimeout(() => { $('copy').textContent = 'Copy Transfer Code'; }, 1600); }, ta = $('codeText');
+    const fallback = () => { ta.focus(); ta.select(); try { document.execCommand('copy'); done(); } catch (e) { $('copy').textContent = 'Selected: press Copy'; } };
+    try { navigator.clipboard.writeText(ta.value).then(done, fallback); } catch (e) { fallback(); } };
+}
+
+(async () => {
+  $('go').href = DEST;
+  const keys = readKeys();
+  // nothing of the game's here (a new visitor, or storage that can't be read): straight to the new address
+  if (!Object.keys(keys).length) { say('Taking you there…'); $('go').onclick = e => { e.preventDefault(); go(''); }; setTimeout(() => go(''), DELAY); return; }
+  let code = ''; try { code = await encode(keys); } catch (e) { }
+  if (!code) { say('Taking you there…'); setTimeout(() => go(''), DELAY); return; }
+  // the button carries the progress too, but its address stays plain, so a copied or shared link never holds it
+  $('go').onclick = e => { e.preventDefault(); go(code.length <= MAX_FRAGMENT ? code : ''); };
+  $('showCode').hidden = false; $('showCode').onclick = () => showCode(code);
+  // A Home Screen icon on an iPhone or iPad keeps its own storage, apart from Safari's, so its progress would not reach a new
+  // icon added from Safari: there the transfer code is offered first, and the button still opens the game here.
+  const homeScreen = navigator.standalone === true;
+  if (code.length > MAX_FRAGMENT) { say('Your progress is too big to carry over on its own. Copy the transfer code and paste it into the game: Settings, Import.'); showCode(code); return; }
+  if (homeScreen) { say('Bring your progress to the new address:'); showCode(code); $('go').textContent = 'Play Here Instead'; $('go').className = 'btn plain'; return; }
+  say('Bringing your progress with you…');
+  setTimeout(() => go(code), DELAY);
+})();
+</script>
+</body>
+</html>
